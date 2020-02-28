@@ -21,6 +21,7 @@ import (
 
 	"github.com/openshift-online/ocm-api-metamodel/cmd/generate/docs"
 	"github.com/openshift-online/ocm-api-metamodel/cmd/generate/golang"
+	"github.com/openshift-online/ocm-api-metamodel/cmd/generate/javascript"
 	"github.com/openshift-online/ocm-api-metamodel/cmd/generate/openapi"
 )
 
@@ -35,5 +36,6 @@ func init() {
 	// Register the sub-commands:
 	Cmd.AddCommand(docs.Cmd)
 	Cmd.AddCommand(golang.Cmd)
+	Cmd.AddCommand(javascript.Cmd)
 	Cmd.AddCommand(openapi.Cmd)
 }

@@ -73,6 +73,15 @@ go_tests: cmds
 		--output=tests/go/generated
 	ginkgo -r tests/go
 
+.PHONY: javascript_tests
+js_tests: cmds
+	rm -rf tests/js/generated
+	./metamodel generate js \
+		--model=tests/model \
+		--base=github.com/openshift-online/ocm-api-metamodel/tests/js/generated \
+		--output=tests/js/generated
+	ginkgo -r tests/js
+
 .PHONY: openapi_tests
 openapi_tests: openapi_generator
 	rm -rf tests/openapi/generated
